@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><strong>Happy</strong> Lunch</ion-card-title>
+    </ion-card-header>
+    <div class="dishoftheday">
+      <h1 class="dishTitle"><strong>Dish</strong> of the day !</h1>
+      <div class="dish">
+        <img src="../../assets/meatballs.jpg" alt="">
+      </div>
+    </div>
+    <div class="grid-container">
+      <div (click)="sendToFoodplate()" class="grid-item">
+        <span><img src="../../assets/foodplate.jpg" alt=""></span>
+      </div>
+      <div (click)="sendToCake()" class="grid-item">
+        <span>
+          <img src="../../assets/dessert.jpg" alt="">
+        </span>
+      </div>
+      <div (click)="sendToDrinks()" class="grid-item">
+        <span>
+          <img src="../../assets/drinks.jpg" alt=""></span>
+      </div>
+      <div (click)="sendToSnacks()" class="grid-item">
+        <span>
+          <img src="../../assets/snacks.jpg" alt=""></span>
+      </div>
+    </div>
+
+  </ion-card>
+</ion-content>

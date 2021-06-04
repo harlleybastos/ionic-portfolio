@@ -1,0 +1,239 @@
+ion-content {
+  --ion-background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ion-card {
+  margin-top: 50px;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+
+  ion-card-title {
+    text-align: center;
+    color: #242020;
+    font-size: 50px;
+    font-weight: 400;
+
+    strong {
+      font-weight: bold;
+      color: #198645;
+    }
+  }
+
+  .dishoftheday {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px;
+    color: #000;
+
+    strong {
+      font-weight: bold;
+      color: #198645;
+    }
+
+    .dishTitle {
+      font-size: 40px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 20px;
+    }
+
+    .dish {
+      position: relative;
+      width: calc(100% /3);
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 3px 3px 5px lightgray;
+      cursor: pointer;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+    }
+
+    .dish::before {
+      content: "Mealball\a Off $10,00 \a for $5,00 \a\a Ingredients: Mealballs";
+      white-space: pre;
+      position: absolute;
+      top: 50%;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .3s;
+      transition-delay: .2s;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .dish::after {
+      content: "\a";
+      white-space: pre;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      border-radius: 10px;
+      height: 0;
+      background-color: rgba(0, 0, 0, .4);
+      transition: .3s;
+    }
+
+    .dish:hover::after {
+      height: 100%;
+    }
+
+    .dish:hover::before {
+      margin-top: 0;
+      opacity: 1;
+      padding: 0;
+    }
+
+  }
+
+  .grid-container {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+    .grid-item {
+      position: relative;
+      width: calc(100% /4);
+      padding: 10px;
+      cursor: pointer;
+
+      span {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px lightgray;
+
+        img {
+          width: 100%;
+          vertical-align: middle;
+          transition: all 0.3 ease;
+          border-radius: 10px;
+        }
+      }
+
+    }
+
+    .grid-item:nth-child(1)::before {
+      content: 'Meal';
+      position: absolute;
+      top: 50%;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .3s;
+      transition-delay: .2s;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .grid-item:nth-child(2)::before {
+      content: 'Desserts';
+      position: absolute;
+      top: 50%;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .3s;
+      transition-delay: .2s;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .grid-item:nth-child(3)::before {
+      content: 'Drinks';
+      position: absolute;
+      top: 50%;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .3s;
+      transition-delay: .2s;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .grid-item:nth-child(4)::before {
+      content: 'Snacks';
+      position: absolute;
+      top: 50%;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .3s;
+      transition-delay: .2s;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .grid-item::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      border-radius: 10px;
+      height: 0;
+      background-color: rgba(0, 0, 0, .4);
+      transition: .3s;
+    }
+
+    .grid-item:hover::after {
+      height: 100%;
+    }
+
+    .grid-item:hover::before {
+      margin-top: 0;
+      opacity: 1;
+      padding: 0;
+    }
+
+  }
+
+  @media(max-width: 1000px) {
+    .dishoftheday .dish {
+      width: calc(100% / 2);
+    }
+
+
+    .grid-container .grid-item {
+      width: calc(100% / 3);
+    }
+  }
+
+  @media(max-width: 800px) {
+    .dishoftheday .dish {
+      width: calc(100% / 1);
+    }
+
+    .grid-container .grid-item {
+      width: calc(100% / 2);
+    }
+  }
+}
